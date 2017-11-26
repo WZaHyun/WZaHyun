@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-25T13:03:29.160Z</updated>
+  <updated>2017-11-26T06:04:58.197Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/11/26/%E5%9F%BA%E4%BA%8EC#windows%E7%9A%84%E8%AE%A1%E7%AE%97%E5%99%A8/"/>
+    <id>http://yoursite.com/2017/11/26/基于C#windows的计算器/</id>
+    <published>2017-11-26T06:04:23.650Z</published>
+    <updated>2017-11-26T06:04:58.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>【C#】一个普通计算器设计<br><img src="http://img.blog.csdn.net/20171125201710579?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeGluXzM2MjU1MjI2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="实现窗体截图"><br>链接：<a href="http://pan.baidu.com/s/1jHQEr58" target="_blank" rel="noopener">http://pan.baidu.com/s/1jHQEr58</a> 密码：4gj2</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;【C#】一个普通计算器设计&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20171125201710579?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeGluXzM2MjU1MjI2/f
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
