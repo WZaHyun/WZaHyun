@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="GETAWAY@CAR" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
 
 
 
@@ -82,11 +82,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="GETAWAY@CAR">
+<meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="GETAWAY@CAR">
+<meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GETAWAY@CAR">
+<meta name="twitter:title" content="Hexo">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <title>GETAWAY@CAR</title>
+  <title>Hexo</title>
   
 
 
@@ -153,7 +153,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">GETAWAY@CAR</span>
+        <span class="site-title">Hexo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -183,7 +183,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -193,7 +193,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -223,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -270,16 +270,320 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/【Cisco】基础与三种路由协议配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vine7">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GETAWAY@CAR">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/26/【Cisco】基础与三种路由协议配置/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-26T15:53:51+08:00">
+                2017-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="【Cisco】基础与三种路由协议配置"><a href="#【Cisco】基础与三种路由协议配置" class="headerlink" title="【Cisco】基础与三种路由协议配置"></a>【Cisco】基础与三种路由协议配置</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a><br>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
+<p>  <em>软件：Cisco Packet Tracer5</em><br>  <em>协议：静态/RIP/OSPF</em><br>  <em>⚠️三种协议必须分开配置，否则按默认优先级排序</em></p>
+<p><strong>1.配置基础</strong><br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWN5aHQzM0tTekFBN1U5Zm51dDJRa2p4eUNES0pWcG1DQmdpYTIyUjR0bWdnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.网络拓扑图所示</a></p>
+<p>PC0-192.168.50.1/255.255.255.128/192.168.50.126<br>PC1-192.168.50.2/255.255.255.128/192.168.50.126<br>PC2-192.168.50.129/255.255.255.128/192.168.50.254<br>PC3-192.168.50.130/255.255.255.128/192.168.50.254</p>
+<p>主要步骤：<br>①开启路由器端口</p>
+<blockquote>
+<p>Router&gt;en（进入特权）<br>Router#configure terminal（conf ter全局配置模式）<br>Router(config)#inter f0/0（进入f0/0端口）<br>Router(config-if)#no sh（开启端口）<br>Router(config-if)#exit<br>Router(config)#inter f0/1（进入f0/1端口）<br>Router(config-if)#no sh<br>Router(config-if)#exit</p>
+</blockquote>
+<p>此时路由器两端变为绿色<br>易遗漏步骤→端口默认关闭，用no shutdown（no sh）命令把端口开启</p>
+<p>②具体配置f0/0 &amp; f0/1</p>
+<blockquote>
+<p>Router(config)#inter f0/0<br>Router(config-if)#ip add 192.168.50.126 255.255.255.128<br>Router(config-if)#exit<br>Router(config)#inter f0/1<br>Router(config-if)#ip add 192.168.50.254 255.255.255.128</p>
+</blockquote>
+<p>③测试<br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNzFsQ004eG40Z3k4ZlRVY0xOdGRjQ1pDckw3QVN6OFBnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如图</a><br>配置成功！</p>
+<p><strong>2.静态路由协议配置</strong><br><a href="http://imglf6.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKMWtYdGgvUlVMaWF5SEpRL1hLekx2eTY5VXBRM3dMWUlRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.网络拓扑图所示</a></p>
+<p>PC0-192.168.50.1/255.255.255.224/192.168.50.30<br>PC1-192.168.50.2/255.255.255.224/192.168.50.30<br>PC2-192.168.50.33/255.255.255.224/192.168.50.62<br>PC3-192.168.50.34/255.255.255.224/192.168.50.62<br>cPC0-192.168.50.65/255.255.255.224/192.168.50.94<br>cPC1-192.168.50.66/255.255.255.224/192.168.50.94<br>cPC2-192.168.50.97/255.255.255.224/192.168.50.126<br>cPC3-192.168.50.98/255.255.255.224/192.168.50.126</p>
+<p>①相关端口配置与基础类似<br>略</p>
+<p>②路由器物理设备设置<br>路由器必须如<a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNmhDTjVyV1hoSGZZOWZic0dSRjZvcWdZZk1CZEZrK1pnPT0.jpg?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a>配置，否则无e0/0/0</p>
+<p>⭐③R0与cR0 静态</p>
+<p>R0</p>
+<blockquote>
+<p>Router&gt;en<br>Router#conf ter<br>Router(config)#inter e0/0/0<br>Router(config-if)#ip add 192.168.50.129 255.255.255.224<br>Router(config-if)#no sh</p>
+</blockquote>
+<p>cR0</p>
+<blockquote>
+<p>Router&gt;en<br>Router#conf ter<br>Router(config)#inter e0/0/0<br>Router(config-if)#ip add 192.168.50.130 255.255.255.224<br>Router(config-if)#no sh</p>
+</blockquote>
+<p>注意-此时不通，未配置路由协议</p>
+<p>R0</p>
+<p>至目标网络号+下一跳</p>
+<blockquote>
+<p>Router(config)#ip rou 192.168.50.64 255.255.255.224 192.168.50.130<br>Router(config)#ip rou 192.168.50.96 255.255.255.224 192.168.50.130<br>cR0</p>
+</blockquote>
+<p>至目标网络号+下一跳</p>
+<blockquote>
+<p>Router(config)#ip rou 192.168.50.0 255.255.255.224 192.168.50.129<br>Router(config)#ip rou 192.168.50.32 255.255.255.224 192.168.50.129</p>
+</blockquote>
+<p>④测试<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKekQyc2ZSR0F6SjZzVGxMVXNLWHdwNHA1MWM4aHhOeVJRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a><br>配置成功！</p>
+<p><strong>3.RIP动态路由协议配置</strong></p>
+<p>①-②相同<br>略</p>
+<p>⭐③R0与cR0 RIP</p>
+<p>R0</p>
+<blockquote>
+<p>Router(config)#rou rip<br>Router(config-router)#ver 2<br>Router(config-router)#netw 192.168.50.64<br>Router(config-router)#netw 192.168.50.96<br>Router(config-router)#netw 192.168.50.128</p>
+</blockquote>
+<p>cR0</p>
+<blockquote>
+<p>Router(config)#rou rip<br>Router(config-router)#ver 2<br>Router(config-router)#netw 192.168.50.0<br>Router(config-router)#netw 192.168.50.32<br>Router(config-router)#netw 192.168.50.128</p>
+</blockquote>
+<p>④测试<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKOXF1NXNqMHZYdTRsQldjRXFoWFpPUUl5cWhwRStXdWNRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a><br>配置成功！</p>
+<p><strong>4.OSPF动态路由协议配置</strong></p>
+<p>①-②相同<br>略</p>
+<p>⭐③R0与cR0 OSPF</p>
+<p>R0</p>
+<blockquote>
+<p>Router(config)#rout ospf 100<br>Router(config-router)#network 192.168.50.0 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.32 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.128 0.0.0.31 area 1</p>
+</blockquote>
+<p>cR0</p>
+<blockquote>
+<p>Router(config)#rout ospf 100<br>Router(config-router)#network 192.168.50.64 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.96 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.128 0.0.0.31 area 1</p>
+</blockquote>
+<p>④测试<br><a href="http://imglf3.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKeStVMUVXd3l0TlFPdjg4RGtXMDRCbG0yelpwaHNJNC9BPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如图</a><br>配置成功！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/计算器源代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/26/计算器源代码/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-26T15:18:13+08:00">
+                2017-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://img.blog.csdn.net/20171125201710579?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeGluXzM2MjU1MjI2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" target="_blank" rel="noopener">实现窗体展示</a></p>
+<blockquote>
+<p>链接：<a href="http://pan.baidu.com/s/1jHQEr58" target="_blank" rel="noopener">http://pan.baidu.com/s/1jHQEr58</a> 密码：4gj2</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -299,7 +603,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-25T21:03:26+08:00">
                 2017-11-25
@@ -420,7 +724,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">vine7</p>
+              <p class="site-author-name" itemprop="name">John Doe</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -431,8 +735,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -485,13 +789,13 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">vine7</span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
   
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
