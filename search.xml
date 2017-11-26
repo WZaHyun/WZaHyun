@@ -3,27 +3,27 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[【Cisco】基礎與三種路由協議配置]]></title>
       <url>/2017/11/26/%E3%80%90Cisco%E3%80%91%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%B8%89%E7%A7%8D%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h1 id="【Cisco】基础与三种路由协议配置"><a href="#【Cisco】基础与三种路由协议配置" class="headerlink" title="【Cisco】基础与三种路由协议配置"></a>【Cisco】基础与三种路由协议配置</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a><br>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
-<p>  <em>软件：Cisco Packet Tracer5</em><br>  <em>协议：静态/RIP/OSPF</em><br>  <em>⚠️三种协议必须分开配置，否则按默认优先级排序</em></p>
-<p><strong>1.配置基础</strong><br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWN5aHQzM0tTekFBN1U5Zm51dDJRa2p4eUNES0pWcG1DQmdpYTIyUjR0bWdnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.网络拓扑图所示</a></p>
+      <content type="html"><![CDATA[<p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a><br>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
+<p>  <em>軟件：Cisco Packet Tracer5</em><br>  <em>協議：靜態/RIP/OSPF</em><br>  <em>⚠️三種協議必須分開配置，否則按默認優先級排序</em></p>
+<p><strong>1.配置基礎</strong><br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWN5aHQzM0tTekFBN1U5Zm51dDJRa2p4eUNES0pWcG1DQmdpYTIyUjR0bWdnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.網酪拓撲圖所示</a></p>
 <p>PC0-192.168.50.1/255.255.255.128/192.168.50.126<br>PC1-192.168.50.2/255.255.255.128/192.168.50.126<br>PC2-192.168.50.129/255.255.255.128/192.168.50.254<br>PC3-192.168.50.130/255.255.255.128/192.168.50.254</p>
-<p>主要步骤：<br>①开启路由器端口</p>
+<p>主要步驟：<br>壹開啟路由器端口</p>
 <blockquote>
-<p>Router&gt;en（进入特权）<br>Router#configure terminal（conf ter全局配置模式）<br>Router(config)#inter f0/0（进入f0/0端口）<br>Router(config-if)#no sh（开启端口）<br>Router(config-if)#exit<br>Router(config)#inter f0/1（进入f0/1端口）<br>Router(config-if)#no sh<br>Router(config-if)#exit</p>
+<p>Router&gt;en（進入特權）<br>Router#configure terminal（conf ter全局配置模式）<br>Router(config)#inter f0/0（進入f0/0端口）<br>Router(config-if)#no sh（開啟端口）<br>Router(config-if)#exit<br>Router(config)#inter f0/1（進入f0/1端口）<br>Router(config-if)#no sh<br>Router(config-if)#exit</p>
 </blockquote>
-<p>此时路由器两端变为绿色<br>易遗漏步骤→端口默认关闭，用no shutdown（no sh）命令把端口开启</p>
-<p>②具体配置f0/0 &amp; f0/1</p>
+<p>此時路由器兩端變為綠色<br>易遺漏步驟→端口默認關閉，用no shutdown（no sh）命令把端口開啟</p>
+<p>二具體配置f0/0 &amp; f0/1</p>
 <blockquote>
 <p>Router(config)#inter f0/0<br>Router(config-if)#ip add 192.168.50.126 255.255.255.128<br>Router(config-if)#exit<br>Router(config)#inter f0/1<br>Router(config-if)#ip add 192.168.50.254 255.255.255.128</p>
 </blockquote>
-<p>③测试<br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNzFsQ004eG40Z3k4ZlRVY0xOdGRjQ1pDckw3QVN6OFBnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如图</a><br>配置成功！</p>
-<p><strong>2.静态路由协议配置</strong><br><a href="http://imglf6.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKMWtYdGgvUlVMaWF5SEpRL1hLekx2eTY5VXBRM3dMWUlRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.网络拓扑图所示</a></p>
+<p>③測試<br><a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNzFsQ004eG40Z3k4ZlRVY0xOdGRjQ1pDckw3QVN6OFBnPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如圖</a><br>配置成功！</p>
+<p><strong>2.靜態路由協議配置</strong><br><a href="http://imglf6.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKMWtYdGgvUlVMaWF5SEpRL1hLekx2eTY5VXBRM3dMWUlRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">eg.網酪拓撲圖所示</a></p>
 <p>PC0-192.168.50.1/255.255.255.224/192.168.50.30<br>PC1-192.168.50.2/255.255.255.224/192.168.50.30<br>PC2-192.168.50.33/255.255.255.224/192.168.50.62<br>PC3-192.168.50.34/255.255.255.224/192.168.50.62<br>cPC0-192.168.50.65/255.255.255.224/192.168.50.94<br>cPC1-192.168.50.66/255.255.255.224/192.168.50.94<br>cPC2-192.168.50.97/255.255.255.224/192.168.50.126<br>cPC3-192.168.50.98/255.255.255.224/192.168.50.126</p>
-<p>①相关端口配置与基础类似<br>略</p>
-<p>②路由器物理设备设置<br>路由器必须如<a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNmhDTjVyV1hoSGZZOWZic0dSRjZvcWdZZk1CZEZrK1pnPT0.jpg?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a>配置，否则无e0/0/0</p>
-<p>⭐③R0与cR0 静态</p>
+<p>壹相關端口配置與基礎類似<br>略</p>
+<p>二路由器物理設備設置<br>路由器必須如<a href="http://imglf5.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKNmhDTjVyV1hoSGZZOWZic0dSRjZvcWdZZk1CZEZrK1pnPT0.jpg?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">圖</a>配置，否則無e0/0/0</p>
+<p>⭐③R0與cR0 靜態</p>
 <p>R0</p>
 <blockquote>
 <p>Router&gt;en<br>Router#conf ter<br>Router(config)#inter e0/0/0<br>Router(config-if)#ip add 192.168.50.129 255.255.255.224<br>Router(config-if)#no sh</p>
@@ -32,20 +32,20 @@
 <blockquote>
 <p>Router&gt;en<br>Router#conf ter<br>Router(config)#inter e0/0/0<br>Router(config-if)#ip add 192.168.50.130 255.255.255.224<br>Router(config-if)#no sh</p>
 </blockquote>
-<p>注意-此时不通，未配置路由协议</p>
+<p>註意-此時不通，未配置路由協議</p>
 <p>R0</p>
-<p>至目标网络号+下一跳</p>
+<p>至目標網酪號+下壹跳</p>
 <blockquote>
 <p>Router(config)#ip rou 192.168.50.64 255.255.255.224 192.168.50.130<br>Router(config)#ip rou 192.168.50.96 255.255.255.224 192.168.50.130<br>cR0</p>
 </blockquote>
-<p>至目标网络号+下一跳</p>
+<p>至目標網酪號+下壹跳</p>
 <blockquote>
 <p>Router(config)#ip rou 192.168.50.0 255.255.255.224 192.168.50.129<br>Router(config)#ip rou 192.168.50.32 255.255.255.224 192.168.50.129</p>
 </blockquote>
-<p>④测试<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKekQyc2ZSR0F6SjZzVGxMVXNLWHdwNHA1MWM4aHhOeVJRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a><br>配置成功！</p>
-<p><strong>3.RIP动态路由协议配置</strong></p>
-<p>①-②相同<br>略</p>
-<p>⭐③R0与cR0 RIP</p>
+<p>四測試<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKekQyc2ZSR0F6SjZzVGxMVXNLWHdwNHA1MWM4aHhOeVJRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">圖</a><br>配置成功！</p>
+<p><strong>3.RIP動態路由協議配置</strong></p>
+<p>壹-二相同<br>略</p>
+<p>⭐③R0與cR0 RIP</p>
 <p>R0</p>
 <blockquote>
 <p>Router(config)#rou rip<br>Router(config-router)#ver 2<br>Router(config-router)#netw 192.168.50.64<br>Router(config-router)#netw 192.168.50.96<br>Router(config-router)#netw 192.168.50.128</p>
@@ -54,10 +54,10 @@
 <blockquote>
 <p>Router(config)#rou rip<br>Router(config-router)#ver 2<br>Router(config-router)#netw 192.168.50.0<br>Router(config-router)#netw 192.168.50.32<br>Router(config-router)#netw 192.168.50.128</p>
 </blockquote>
-<p>④测试<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKOXF1NXNqMHZYdTRsQldjRXFoWFpPUUl5cWhwRStXdWNRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">图</a><br>配置成功！</p>
-<p><strong>4.OSPF动态路由协议配置</strong></p>
-<p>①-②相同<br>略</p>
-<p>⭐③R0与cR0 OSPF</p>
+<p>四測試<br><a href="http://imglf4.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKOXF1NXNqMHZYdTRsQldjRXFoWFpPUUl5cWhwRStXdWNRPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">圖</a><br>配置成功！</p>
+<p><strong>4.OSPF動態路由協議配置</strong></p>
+<p>壹-二相同<br>略</p>
+<p>⭐③R0與cR0 OSPF</p>
 <p>R0</p>
 <blockquote>
 <p>Router(config)#rout ospf 100<br>Router(config-router)#network 192.168.50.0 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.32 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.128 0.0.0.31 area 1</p>
@@ -66,18 +66,18 @@
 <blockquote>
 <p>Router(config)#rout ospf 100<br>Router(config-router)#network 192.168.50.64 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.96 0.0.0.31 area 1<br>Router(config-router)#network 192.168.50.128 0.0.0.31 area 1</p>
 </blockquote>
-<p>④测试<br><a href="http://imglf3.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKeStVMUVXd3l0TlFPdjg4RGtXMDRCbG0yelpwaHNJNC9BPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如图</a><br>配置成功！</p>
+<p>四測試<br><a href="http://imglf3.nosdn.127.net/img/WHdVall4cWhuQWQydFNQakJJV2NKeStVMUVXd3l0TlFPdjg4RGtXMDRCbG0yelpwaHNJNC9BPT0.png?=imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2" target="_blank" rel="noopener">如圖</a><br>配置成功！</p>
 ]]></content>
       
         
     </entry>
     
     <entry>
-      <title></title>
+      <title><![CDATA[基於C#計算器源代碼]]></title>
       <url>/2017/11/26/%E8%AE%A1%E7%AE%97%E5%99%A8%E6%BA%90%E4%BB%A3%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p><a href="http://img.blog.csdn.net/20171125201710579?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeGluXzM2MjU1MjI2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" target="_blank" rel="noopener">实现窗体展示</a></p>
+      <content type="html"><![CDATA[<p><a href="http://img.blog.csdn.net/20171125201710579?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeGluXzM2MjU1MjI2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" target="_blank" rel="noopener">實現窗體展示</a></p>
 <blockquote>
-<p>链接：<a href="http://pan.baidu.com/s/1jHQEr58" target="_blank" rel="noopener">http://pan.baidu.com/s/1jHQEr58</a> 密码：4gj2</p>
+<p>鏈接：<a href="http://pan.baidu.com/s/1jHQEr58" target="_blank" rel="noopener">http://pan.baidu.com/s/1jHQEr58</a> 密碼：4gj2</p>
 </blockquote>
 ]]></content>
       
