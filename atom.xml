@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-26T09:30:57.756Z</updated>
+  <updated>2019-01-01T12:27:01.673Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Taylor】Rep巡演纪录片</title>
+    <link href="http://yoursite.com/2019/01/01/%E3%80%90Taylor%E3%80%91Rep%E5%B7%A1%E6%BC%94%E7%BA%AA%E5%BD%95%E7%89%87/"/>
+    <id>http://yoursite.com/2019/01/01/【Taylor】Rep巡演纪录片/</id>
+    <published>2019-01-01T12:18:40.392Z</published>
+    <updated>2019-01-01T12:27:01.673Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="./_image/431FDC56FF941FA1F00AB649896F2F82.png" alt=""></p><blockquote><p>链接：<a href="https://pan.baidu.com/s/1RHyrK6eghgd8uJt3tCqQyg" target="_blank" rel="noopener">https://pan.baidu.com/s/1RHyrK6eghgd8uJt3tCqQyg</a><br>提取码：uisj<br>复制这段内容后打开百度网盘手机App，操作更方便哦</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;./_image/431FDC56FF941FA1F00AB649896F2F82.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;链接：&lt;a href=&quot;https://pan.baidu.com/s/1RHyrK6eghgd8uJt
+      
+    
+    </summary>
+    
+    
+      <category term="Taylor" scheme="http://yoursite.com/tags/Taylor/"/>
+    
+      <category term="巡演" scheme="http://yoursite.com/tags/%E5%B7%A1%E6%BC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>【Cisco】基礎與三種路由協議配置</title>
