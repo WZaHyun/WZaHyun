@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flask+mongodb 前端頁面獲取數據庫數據示例]]></title>
+    <url>%2F2019%2F03%2F09%2Fflask%2Bmongodb%20%E5%89%8D%E7%AB%AF%E9%A0%81%E9%9D%A2%E9%A1%AF%E7%A4%BA%E6%95%B8%E6%93%9A%E7%A4%BA%E4%BE%8B%2F</url>
+    <content type="text"><![CDATA[templates-my_template.html-test2.htmltest.py test.py 連接數據庫 點擊事件input獲取數值1234567891011121314151617181920212223242526272829from flask import Flask,render_template,url_for,requestimport pymongoapp = Flask(__name__)db = pymongo.MongoClient('localhost',27017).Sina #Sina是數據庫名稱collection = db.Information #集合/table@app.route('/')def my_echart():#在浏览器上渲染my_templaces.html模板 return render_template('my_template.html')@app.route('/search', methods=['post']) #點擊search事件def search(): id = request.form.get('fname') # print(collection.find_one(&#123;'_id': id&#125;)) res = collection.find_one(&#123;'_id': id&#125;) #find_one返回一條數據 if res != None: return render_template('test2.html', fname=id,re=res)#渲染網頁，直接輸入名稱不需要路徑，傳參 return render_template('my_template.html') if __name__ == "__main__": #运行项目 app.run(debug = True) my_template.html1234567......&lt;div style="padding-left:304px;"&gt; &lt;form action="search" method="post"&gt; 请输入ID: &lt;input type="text" name="fname" /&gt; &lt;input type="submit" class="btn btn-default" value="立即创建" /&gt;&lt;/form&gt;&lt;/div&gt;...... test2.html12345678910111213141516......&lt;div style="padding-left:304px;"&gt; 对ID：&#123;&#123;fname&#125;&#125;信息解析 #直接使用變量&lt;/div&gt;......&lt;div style="padding-left:304px;"&gt;&lt;ul&gt; &lt;li&gt;&#123;&#123;re['_id']&#125;&#125;&lt;/li&gt; #獲得對象屬性 &lt;li&gt;&#123;&#123;re['nick_name']&#125;&#125;&lt;/li&gt; &lt;li&gt;&#123;&#123;re['gender']&#125;&#125;&lt;/li&gt; &lt;li&gt;&#123;&#123;re['province']&#125;&#125;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;...... 通過以上代碼可以實現獲取表單信息（所需的查詢id），並通過id獲取數據庫的數據顯示在前端頁面中注意：find_one()與find()的區別分別獲取的數據在html頁面的使用上有所差別具體可以瀏覽↓ find_one()/find()：https://blog.csdn.net/Steven_2669/article/details/77104629傳參：https://www.jianshu.com/p/1213dadb2a71]]></content>
+      <tags>
+        <tag>flask</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Taylor】Rep巡演纪录片]]></title>
     <url>%2F2019%2F01%2F01%2F%E3%80%90Taylor%E3%80%91Rep%E5%B7%A1%E6%BC%94%E7%BA%AA%E5%BD%95%E7%89%87%2F</url>
     <content type="text"><![CDATA[链接：https://pan.baidu.com/s/1RHyrK6eghgd8uJt3tCqQyg提取码：uisj复制这段内容后打开百度网盘手机App，操作更方便哦]]></content>
